@@ -1,4 +1,4 @@
-package java.shop;
+package jana60;
 
 import java.text.DecimalFormat;
 
@@ -73,7 +73,7 @@ public class Prodotto {
 	}
 
 
-	public void setIva(int iva) {
+	public void setIva(float iva) {
 		this.iva = iva;
 	}
 	
@@ -81,14 +81,22 @@ public class Prodotto {
 	
 	//metodi per calcolare e formattare il prezzo
 	public double calcolaPrezzo() {
-		double prezzoFinale = prezzo * iva;
+		float prezzoFinale = prezzo + prezzo * iva;
 		return prezzoFinale;
 		
 	}
 	
-	String formattaPrezzo() {
+	public String formattaPrezzo() {
 	    DecimalFormat df = new DecimalFormat("0.00€");
 	    return df.format(calcolaPrezzo());
+	  }
+	
+	//metodo per concatenare
+	@Override
+	  public String toString() {
+	    return "Il codice del prodotto è " + codice + ", il nome del prodotto è " + nome + ", di marca " + marca + ", prezzo di listino " + prezzo +
+	    		"€, l'iva è " + iva + "%, il prezzo finale quindi è " + formattaPrezzo();
+	    		
 	  }
 	
 	

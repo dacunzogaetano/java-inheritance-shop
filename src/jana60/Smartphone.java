@@ -1,4 +1,4 @@
-package java.shop;
+package jana60;
 
 public class Smartphone extends Prodotto{
 	
@@ -20,6 +20,29 @@ public class Smartphone extends Prodotto{
 		this.memoria = memoria;
 	}
 	
+	//getters and setters
+	
+	public int getCodiceIMEI() {
+		return codiceIMEI;
+	}
+
+	public void setCodiceIMEI(int codiceIMEI) {
+		this.codiceIMEI = codiceIMEI;
+	}
+
+	public int getMemoria() {
+		return memoria;
+	}
+
+	public void setMemoria(int memoria) {
+		this.memoria = memoria;
+	}
+	
+	//metodo che eredita il concatenamento di prodotto ed aggiunge i due attributi della classe Smartphone
+	@Override
+	  public String toString() {
+	    return super.toString() + ". Il codice IMEI del cellulare è  " + codiceIMEI + ", mentre la memoria interna è di " + memoria + "GB.";
+	  }
 	
 
 }

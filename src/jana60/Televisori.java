@@ -1,4 +1,4 @@
-package java.shop;
+package jana60;
 
 public class Televisori extends Prodotto{
 	
@@ -18,5 +18,28 @@ public class Televisori extends Prodotto{
 		super(codice, nome, marca, prezzo, iva);
 		this.dimensioni = dimensioni;
 	}
+	
+	//getters and setters 
+	
+	public float getDimensioni() {
+		return dimensioni;
+	}
 
+	public void setDimensioni(float dimensioni) {
+		this.dimensioni = dimensioni;
+	}
+
+	public Boolean getSmart() {
+		return smart;
+	}
+
+	public void setSmart(Boolean smart) {
+		this.smart = smart;
+	}
+	
+	//metodo che eredita il concatenamento di prodotto ed aggiunge i due attributi della classe Televisori
+		@Override
+		  public String toString() {
+		    return super.toString() + ". Le dimensioni del televisore sono " + dimensioni + " cm.";
+		  }
 }

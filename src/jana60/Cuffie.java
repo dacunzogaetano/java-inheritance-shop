@@ -1,4 +1,4 @@
-package java.shop;
+package jana60;
 
 public class Cuffie extends Prodotto{
 	
@@ -19,6 +19,28 @@ public class Cuffie extends Prodotto{
 		this.colore = colore;
 	}
 	
+	//getters and setters
 	
+	public String getColore() {
+		return colore;
+	}
+
+	public void setColore(String colore) {
+		this.colore = colore;
+	}
+
+	public Boolean getWireless() {
+		return wireless;
+	}
+
+	public void setWireless(Boolean wireless) {
+		this.wireless = wireless;
+	}
+	
+	//metodo che eredita il concatenamento di prodotto ed aggiunge i due attributi della classe Cuffie
+			@Override
+			  public String toString() {
+			    return super.toString() + ". Il colore delle cuffie è " + colore + ".";
+			  }
 
 }
