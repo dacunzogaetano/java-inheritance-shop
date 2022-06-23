@@ -10,13 +10,14 @@ public class Cuffie extends Prodotto{
 	//attributi cuffie	
 	
 	private String colore;
-	private Boolean wireless;
+	private boolean wireless;
 	
 	//costruttori cuffie
 	
-	public Cuffie(int codice, String nome, String marca, float prezzo, float iva, String colore) {
+	public Cuffie(int codice, String nome, String marca, float prezzo, float iva, String colore, boolean wireless) {
 		super(codice, nome, marca, prezzo, iva);
 		this.colore = colore;
+		this.wireless = wireless;
 	}
 	
 	//getters and setters
@@ -29,18 +30,24 @@ public class Cuffie extends Prodotto{
 		this.colore = colore;
 	}
 
-	public Boolean getWireless() {
+	public boolean getWireless() {
 		return wireless;
 	}
 
-	public void setWireless(Boolean wireless) {
+	public void setWireless(boolean wireless) {
 		this.wireless = wireless;
 	}
 	
 	//metodo che eredita il concatenamento di prodotto ed aggiunge i due attributi della classe Cuffie
 			@Override
 			  public String toString() {
-			    return super.toString() + ". Il colore delle cuffie è " + colore + ".";
+				String cuffieString = super.toString() + " - " +  getColore();
+				if (wireless) {
+					cuffieString += " - cuffie Wireless.";
+				} else {
+					cuffieString += " - cuffie Cablate";
+				}
+			    return cuffieString;
 			  }
 
 }

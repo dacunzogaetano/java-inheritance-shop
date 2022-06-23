@@ -10,13 +10,14 @@ public class Televisori extends Prodotto{
 	//attributi televisori
 	
 	private  float dimensioni;
-	private Boolean smart;
+	private boolean smart;
 	
 	//costruttori televisori
 	
-	public Televisori(int codice, String nome, String marca, float prezzo, float iva, float dimensioni) {
+	public Televisori(int codice, String nome, String marca, float prezzo, float iva, float dimensioni, boolean smart) {
 		super(codice, nome, marca, prezzo, iva);
 		this.dimensioni = dimensioni;
+		this.smart = smart;
 	}
 	
 	//getters and setters 
@@ -29,17 +30,24 @@ public class Televisori extends Prodotto{
 		this.dimensioni = dimensioni;
 	}
 
-	public Boolean getSmart() {
+	public boolean isSmart() {
 		return smart;
 	}
 
-	public void setSmart(Boolean smart) {
+	public void setSmart(boolean smart) {
 		this.smart = smart;
 	}
 	
-	//metodo che eredita il concatenamento di prodotto ed aggiunge i due attributi della classe Televisori
-		@Override
-		  public String toString() {
-		    return super.toString() + ". Le dimensioni del televisore sono " + dimensioni + " cm.";
-		  }
+	
+
+	  @Override
+	  public String toString() {
+	    String televisoreString = super.toString() + " - " + getDimensioni();
+	    if (smart) {
+	      televisoreString += " - smart";
+	    }
+	    return televisoreString;
+	  }
+
+		
 }

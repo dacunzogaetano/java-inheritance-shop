@@ -94,8 +94,8 @@ public class Prodotto {
 	//metodo per concatenare
 	@Override
 	  public String toString() {
-	    return "Il codice del prodotto è " + codice + ", il nome del prodotto è " + nome + ", di marca " + marca + ", prezzo di listino " + prezzo +
-	    		"€, l'iva è " + iva + "%, il prezzo finale quindi è " + formattaPrezzo();
+	    return "Il nome del prodotto è " + nome + ", di marca " + marca + ", prezzo di listino " + prezzo +
+	    		"€, il prezzo compreso d'IVA è " + formattaPrezzo();
 	    		
 	  }
 	

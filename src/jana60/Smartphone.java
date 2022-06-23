@@ -41,7 +41,7 @@ public class Smartphone extends Prodotto{
 	//metodo che eredita il concatenamento di prodotto ed aggiunge i due attributi della classe Smartphone
 	@Override
 	  public String toString() {
-	    return super.toString() + ". Il codice IMEI del cellulare è  " + codiceIMEI + ", mentre la memoria interna è di " + memoria + "GB.";
+	    return super.toString() + " - " + getMemoria() + "GB.";
 	  }
 	
 
